@@ -14,6 +14,7 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
 <!-- Start GA -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -68,6 +69,35 @@
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function () { // datatable clintside
+            $('#datatables').DataTable();
+        });
+  </script>
+  {{-- <script>
+    $(function() { // ajax datatable serverside
+        $('#datatables').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{!! route('user.json') !!}', // memanggil route yang menampilkan data json
+            columns: [
+                {
+                    data: 'name',
+                    name: 'name'
+                },
+                {
+                    data: 'role',
+                    name: 'role'
+                },
+                {
+                    data: 'email',
+                    name: 'email'
+                },
+            ]
+        });
+    });
+</script> --}}
 </body>
 </html>
 

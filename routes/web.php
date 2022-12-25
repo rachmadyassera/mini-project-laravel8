@@ -24,6 +24,7 @@ Auth::routes();
 
 Route::resource('dashboard', DashboardController::class)->only(['index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user/json', [\App\Http\Controllers\UserController::class, 'json'])->name('user.json');
 Route::resource('user', UserController::class)->middleware('can:isAdmin');
 
 

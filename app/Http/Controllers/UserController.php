@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
@@ -12,11 +13,23 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function json()
+    {
+        return DataTables::of(User::query())->toJson();
+    }
+
     public function index()
     {
         $datauser = User::get();
         return view('User.index', compact('datauser'));
     }
+    // public function index(Request $request) //membuat json untuk datatable serverside
+    // {
+    //     if ($request->ajax()) {
+    //         return DataTables::of(User::query())->toJson();
+    //     }
+    //     return view('User.index');
+    // }
 
     /**
      * Show the form for creating a new resource.
