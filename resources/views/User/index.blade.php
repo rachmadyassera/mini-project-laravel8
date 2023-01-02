@@ -31,8 +31,7 @@
                                 <td>{{$user->email}}</td>
                                 <td>
                                     <ul class="nav">
-                                        <a href="{{route ('user.show', $user->id)}}" class="btn btn-success mr-2">Show</a> &nbsp;
-                                        <a href="{{route ('user.edit', $user->id)}}" class="btn btn-primary mr-2">Edit</a> &nbsp;
+                                        <a href="{{route ('user.edit', $user->id)}}" class="btn btn-primary mr-2">Edit</a>
                                         <form action="{{route ('user.destroy', $user->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')

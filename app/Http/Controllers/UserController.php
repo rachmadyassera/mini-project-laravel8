@@ -78,7 +78,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datauser = User::find($id);
+        return view('User.edit', ['user' => $datauser]);
     }
 
     /**
@@ -90,7 +91,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role = $request->role;
+        $user->save();
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -101,6 +108,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('user.index');
     }
 }
