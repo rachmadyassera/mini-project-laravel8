@@ -1,15 +1,19 @@
 @extends('layouts.main')
 @section('content')
 <div class="container">
-    <div class="container">
         <div class="card shadow">
             <div class="card-header">
-                <h3> Data User</h3>
+                <h4 class="card-title">Data User</h4>
+                <div class="card-header-action">
+                    <div class="buttons">
+                        <a href="{{route ('user.create')}}"  class="btn btn-icon btn-info" target="_blank"><i class="fas fa-plus-circle"></i> Add User</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     {{-- Table clientside --}}
-                    <table id="datatables" class="table table-hover ">
+                    <table id="datatables" class="table table-hover table-bordered table-striped">
                         <thead>
                             <tr>
                                 <td>Nama</td>
@@ -54,8 +58,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
 </div>
 
 @endsection

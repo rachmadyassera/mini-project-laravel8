@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('User.add');
     }
 
     /**
@@ -49,7 +49,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role' => $request->role,
+            'password' => bcrypt('1234')
+        ]);
+        return redirect()->route('user.index');
+
     }
 
     /**
