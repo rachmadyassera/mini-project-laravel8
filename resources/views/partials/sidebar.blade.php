@@ -22,8 +22,8 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-box"></i> <span>Product</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="">Category Product</a></li>
-                <li><a class="nav-link" href="">Data Product</a></li>
+                <li><a class="nav-link" href="{{ url('/category')}}">Category Product</a></li>
+                <li><a class="nav-link" href="{{ url('/product')}}">Data Product</a></li>
               </ul>
             </li>
           </li>

@@ -3,10 +3,10 @@
 <div class="container">
         <div class="card shadow">
             <div class="card-header">
-                <h4 class="card-title">Data User</h4>
+                <h4 class="card-title">Data Category</h4>
                 <div class="card-header-action">
                     <div class="buttons">
-                        <a href="{{route ('user.create')}}"  class="btn btn-icon btn-info"><i class="fas fa-plus-circle"></i> Add User</a>
+                        <a href="{{route ('category.create')}}"  class="btn btn-icon btn-info"><i class="fas fa-plus-circle"></i> Add Category</a>
                     </div>
                 </div>
             </div>
@@ -16,27 +16,23 @@
                     <table id="datatables" class="table table-hover table-bordered table-striped">
                         <thead>
                             <tr>
-                                <td>Nama</td>
-                                <td>Role</td>
-                                <td>Email</td>
-                                <td>Aksi</td>
+                                <td>Name Category</td>
+                                <td>Action</td>
                             </tr>
                         </thead>
                         <tbody>
 
-                            @foreach ($datauser as $user )
+                            @foreach ($category as $ct )
                             <tr>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->role}}</td>
-                                <td>{{$user->email}}</td>
+                                <td>{{$ct->nama}}</td>
                                 <td>
                                     <ul class="nav">
-                                        <a href="{{route ('user.edit', $user->id)}}" class="btn btn-primary mr-2">Edit</a>
-                                        {{-- <a onclick="confirmation(event)" class="btn btn-warning" href="{{route ('user.destroy', $user->id)}}" ><i class="fas fa-trash"></i> Hapus</a> --}}
-                                        <form action="{{route ('user.destroy', $user->id)}}" method="POST">
+                                        <a href="{{route ('category.edit', $ct->id)}}" class="btn btn-primary mr-2">Edit</a>
+                                        {{-- <a onclick="confirmation(event)" class="btn btn-warning" href="{{route ('ct.destroy', $ct->id)}}" ><i class="fas fa-trash"></i> Hapus</a> --}}
+                                        <form action="{{route ('category.destroy', $ct->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button onclick="confirmation(event)" type="submit" class="btn btn-warning">Delete</button>
+                                            <button type="submit" class="btn btn-warning">Delete</button>
                                         </form>
                                     </ul>
                                 </td>

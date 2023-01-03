@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,6 @@ Route::resource('dashboard', DashboardController::class)->only(['index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/user/json', [\App\Http\Controllers\UserController::class, 'json'])->name('user.json');
 Route::resource('user', UserController::class)->middleware('can:isAdmin');
+Route::resource('category', CategoryController::class)->middleware('can:isAdmin');
 
 
