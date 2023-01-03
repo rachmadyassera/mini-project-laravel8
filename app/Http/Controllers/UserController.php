@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Yajra\DataTables\DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -13,7 +14,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function json()
+    public function json() //memanggil data json untuk datatable server
     {
         return DataTables::of(User::query())->toJson();
     }
@@ -55,6 +56,7 @@ class UserController extends Controller
             'role' => $request->role,
             'password' => bcrypt('1234')
         ]);
+        Alert::success('Success', 'You\'ve Successfully Registered');
         return redirect()->route('user.index');
 
     }
@@ -111,6 +113,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
+        Alert::success('Success', 'You\'ve Successfully Deleted');
         return redirect()->route('user.index');
     }
 }

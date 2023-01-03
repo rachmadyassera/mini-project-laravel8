@@ -6,7 +6,7 @@
                 <h4 class="card-title">Data User</h4>
                 <div class="card-header-action">
                     <div class="buttons">
-                        <a href="{{route ('user.create')}}"  class="btn btn-icon btn-info" target="_blank"><i class="fas fa-plus-circle"></i> Add User</a>
+                        <a href="{{route ('user.create')}}"  class="btn btn-icon btn-info"><i class="fas fa-plus-circle"></i> Add User</a>
                     </div>
                 </div>
             </div>
@@ -32,10 +32,11 @@
                                 <td>
                                     <ul class="nav">
                                         <a href="{{route ('user.edit', $user->id)}}" class="btn btn-primary mr-2">Edit</a>
+                                        {{-- <a onclick="confirmation(event)" class="btn btn-warning" href="{{route ('user.destroy', $user->id)}}" ><i class="fas fa-trash"></i> Hapus</a> --}}
                                         <form action="{{route ('user.destroy', $user->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-warning">Delete</button>
+                                            <button onclick="confirmation(event)" type="submit" class="btn btn-warning">Delete</button>
                                         </form>
                                     </ul>
                                 </td>
