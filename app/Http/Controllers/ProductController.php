@@ -8,6 +8,7 @@ use App\Models\Category;
 use Yajra\DataTables\DataTables;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -44,6 +45,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['image' => 'image']);
         $image = $request->file('image')->store('product-images');
         Product::create([
             'category_id' => $request->category,
@@ -78,7 +80,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::get();
+        $product = Product::find($id);
+        return view('Product.edit', ['category' => $category, 'product' => $product]);
     }
 
     /**
@@ -90,7 +94,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->category_id = $request->category;
+        $product->size = $request->size;
+        $product->price = $request->price;
+        if ($request->file('image')) {
+            # code...
+            if ($request->oldImage) {
+                # code...
+                Storage::delete($request->oldImage);
+            }
+            $image = $request->file('image')->store('product-images');
+            $product->image = $image;
+            $product->save();
+        } else {
+            # code...
+            $product->save();
+        }
+        Alert::success('Success', 'You\'ve Successfully Updated');
+        return redirect()->route('product.index');
+
     }
 
     /**
@@ -101,6 +124,14 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        if ($product->image) {
+            # code...
+            Storage::delete($product->image);
+        }
+        $product->delete();
+
+        Alert::success('Success', 'You\'ve Successfully Deleted');
+        return redirect()->route('product.index');
     }
 }

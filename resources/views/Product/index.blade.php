@@ -16,7 +16,7 @@
                     <table id="datatables" class="table table-hover table-bordered table-striped">
                         <thead>
                             <tr>
-                                <td>Image</td>
+                                <td width="100px">Image</td>
                                 <td>Name</td>
                                 <td>Category</td>
                                 <td>Size</td>
@@ -30,7 +30,7 @@
                             <tr>
                                 <td style="vertical-align: middle;">
                                 @if ($prd->image)
-                                <img alt="image" src="{{ asset('storage/'.$prd->image) }}" class="img-fluid img-thumbnail">
+                                <img alt="image" src="{{ asset('storage/'.$prd->image) }}" class="img-fluid">
                                 @else
                                 <center><img alt="image" src="{{ asset('assets/img/example-image-50.jpg') }}" class="rounded-circle mr-1"></center>
                                 @endif
