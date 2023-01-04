@@ -3,10 +3,10 @@
 <div class="container">
         <div class="card shadow">
             <div class="card-header">
-                <h4 class="card-title">Data User</h4>
+                <h4 class="card-title">Data Product</h4>
                 <div class="card-header-action">
                     <div class="buttons">
-                        <a href="{{route ('user.create')}}"  class="btn btn-icon btn-info"><i class="fas fa-plus-circle"></i> Add User</a>
+                        <a href="{{route ('product.create')}}"  class="btn btn-icon btn-info"><i class="fas fa-plus-circle"></i> Add Product</a>
                     </div>
                 </div>
             </div>
@@ -16,27 +16,37 @@
                     <table id="datatables" class="table table-hover table-bordered table-striped">
                         <thead>
                             <tr>
-                                <td>Nama</td>
-                                <td>Role</td>
-                                <td>Email</td>
+                                <td>Image</td>
+                                <td>Name</td>
+                                <td>Category</td>
+                                <td>Size</td>
+                                <td>Price</td>
                                 <td>Aksi</td>
                             </tr>
                         </thead>
                         <tbody>
 
-                            @foreach ($datauser as $user )
+                            @foreach ($product as $prd )
                             <tr>
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->role}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>
+                                <td style="vertical-align: middle;">
+                                @if ($prd->image)
+                                <img alt="image" src="{{ asset('storage/'.$prd->image) }}" class="img-fluid img-thumbnail">
+                                @else
+                                <center><img alt="image" src="{{ asset('assets/img/example-image-50.jpg') }}" class="rounded-circle mr-1"></center>
+                                @endif
+                                </td>
+                                <td style="vertical-align: middle;">{{$prd->name}}</td>
+                                <td style="vertical-align: middle;">{{$prd->nama}}</td>
+                                <td style="vertical-align: middle;">{{$prd->size}}</td>
+                                <td style="vertical-align: middle;">Rp. {{$prd->price}}</td>
+                                <td style="vertical-align: middle;">
                                     <ul class="nav">
-                                        <a href="{{route ('user.edit', $user->id)}}" class="btn btn-primary mr-2">Edit</a>
+                                        <a href="{{route ('product.edit', $prd->id)}}" class="btn btn-primary mr-2">Edit</a>
                                         {{-- <a onclick="confirmation(event)" class="btn btn-warning" href="{{route ('user.destroy', $user->id)}}" ><i class="fas fa-trash"></i> Hapus</a> --}}
-                                        <form action="{{route ('user.destroy', $user->id)}}" method="POST">
+                                        <form action="{{route ('product.destroy', $prd->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button onclick="confirmation(event)" type="submit" class="btn btn-warning">Delete</button>
+                                            <button type="submit" class="btn btn-warning">Delete</button>
                                         </form>
                                     </ul>
                                 </td>
