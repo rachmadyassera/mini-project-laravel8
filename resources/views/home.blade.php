@@ -1,11 +1,10 @@
 @extends('front-end.main')
 @section('content')
 <section class="section">
-
     <div class="section-body">
         <div class="card">
             <div class="card-header">
-                <h4>Caption</h4>
+                <h4>Selamat Datang di Toko Online Sepatu Monza</h4>
             </div>
             <div class="card-body">
             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -16,27 +15,24 @@
                 </ol>
                 <div class="carousel-inner">
                 <div class="carousel-item carousel-item-next carousel-item-left">
-                    <img class="d-block w-100" src="assets/img/news/img01.jpg" alt="First slide">
+                    <img class="d-block w-100" src="{{ asset('storage/banner-images/tnt.jpeg') }}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                    <h5>Heading</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h5>Sepatu Kualitas Internasional</h5>
+                    <p>Produk kami datang dari luar negeri</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/img/news/img07.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="{{ asset('storage/banner-images/tnt.jpg') }}" alt="Second slide">
                     <div class="carousel-caption d-none d-md-block">
-                    <h5>Heading</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h5>Hampir Setiap Hari Live Buka Bal Sepatu</h5>
+                    <p>Anda dapat menyaksikan live streaming penjualan kami melalui media sosial Facebook</p>
                     </div>
                 </div>
                 <div class="carousel-item active carousel-item-left">
-                    <img class="d-block w-100" src="assets/img/news/img08.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="{{ asset('storage/banner-images/tnt2.jpg') }}" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
-                    <h5>Heading</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h5>Dapatkan Sepatu Terbaik Anda</h5>
+                    <p>Anda dapat datang langsung ke galeri toko kami di Kota Medan - Sumatera Utara</p>
                     </div>
                 </div>
                 </div>
@@ -53,18 +49,13 @@
         </div>
         <div class="card">
             <div class="card-header">
-            <h4>Example Card</h4>
+            <h4>Monza Branded Shoes</h4>
             </div>
             <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Kami yakin dan percaya, bahwa usaha tidak akan mengkhianati hasil. Maka dari itu kami berusaha untuk memberikan layanan penjualan dengan jujur apa adanya, seluruh kondisi produk akan dijelaskan secara baik, tanpa ada yang ditutup-tutupi</p>
             </div>
             <div class="card-footer bg-whitesmoke">
-            This is card footer
+            Salam Hormat pada Pelanggan Setia Kami
             </div>
         </div>
     </div>

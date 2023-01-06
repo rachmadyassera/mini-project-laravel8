@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
-use Yajra\DataTables\DataTables;
-use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\DataTables; // library untuk tampilan tabel dinamis
+use RealRashid\SweetAlert\Facades\Alert; //library untuk memperindah tampilan notifikasi
+use Illuminate\Support\Facades\DB; // library agar dapat menjalankan query kedatabase pada saat dibutuhkan
+use Illuminate\Support\Facades\Storage; // libary agar dapat mengahapus file pada folder public
+
+use Auth;
 
 class ProductController extends Controller
 {
