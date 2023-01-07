@@ -30,7 +30,6 @@
 <body class="layout-3">
   <div id="app">
     <div class="main-wrapper container">
-      <div class="navbar-bg"></div>
 
       @include('front-end.navbar')
       <!-- Main Content -->
