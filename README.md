@@ -13,7 +13,7 @@ Perkenalkan, nama saya Rachmad Yasser Al Zuhri, salah satu peserta pelatihan dar
 - Halaman Admin, yang meliputi fitur CRUD mulai dari User, Category Produk, dan Produk. 
 
 
-## Akses Projeck
+## Akses Project
 
 Anda dapat menggunakan akun yang telah saya buat untuk dapat mengakses halaman admin,
 
@@ -24,6 +24,4 @@ Untuk Akses Login [Klik Disini](https://www.c4221138162.my.id/login).
 Untuk Akses Halaman Utama [Klik Disini](https://www.c4221138162.my.id). 
 
 https://www.c4221138162.my.id
-
-
 
